@@ -89,6 +89,14 @@ document.getElementById('sendChatButton').onclick = () => {
   }
 };
 
+// Allow sending the message by pressing Enter in the input field
+document.getElementById('chatInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    document.getElementById('sendChatButton').click();
+  }
+});
+
 async function sendToGemini(text) {
   const chat = document.getElementById('chatContainer');
   const loading = document.createElement('div');
