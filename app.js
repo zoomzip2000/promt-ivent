@@ -1,4 +1,4 @@
-let apiKey = '';
+let apiKey = 'AIzaSyAZzefc8yJKK2L-8Rwqz8DzV9N-8axf4yc';
 let prompts = {
   prompt1: 'Текст промта 1',
   prompt2: 'Текст промта 2',
@@ -48,7 +48,11 @@ function renderPrompts() {
     sendBtn.className = 'icon-button btn-send';
     sendBtn.textContent = '→';
     sendBtn.onclick = () => {
-      addMessageToChat(prompts[key], 'user');
+      const text = prompts[key];
+      addMessageToChat(text, 'user');
+      if (apiKey) {
+        sendToGemini(text);
+      }
     };
 
     group.appendChild(editBtn);
