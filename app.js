@@ -48,7 +48,11 @@ function renderPrompts() {
     sendBtn.className = 'icon-button btn-send';
     sendBtn.textContent = '→';
     sendBtn.onclick = () => {
-      addMessageToChat(prompts[key], 'user');
+      const text = prompts[key];
+      addMessageToChat(text, 'user');
+      if (apiKey) {
+        sendToGemini(text);
+      }
     };
 
     group.appendChild(editBtn);
