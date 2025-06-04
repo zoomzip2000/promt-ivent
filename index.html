@@ -9,18 +9,22 @@
 </head>
 <body class="h-screen">
   <div class="container flex h-screen">
+    <!-- Левая панель -->
     <div class="w-1/4 bg-[#0F1B2B] p-4 flex flex-col gap-2">
       <button id="btnAdd" class="icon-button mb-4">+</button>
       <div id="promptsList" class="flex flex-col gap-2 overflow-y-auto"></div>
     </div>
+
+    <!-- Правая панель -->
     <div class="w-3/4 flex flex-col bg-[#222222] p-4">
-      <div id="chatContainer" class="flex-grow"></div>
+      <div id="chatContainer" class="flex-grow overflow-y-auto"></div>
       <div class="mt-2 flex gap-2">
-        <input id="chatInput" type="text" class="flex-grow rounded-l-md" placeholder="Введите сообщение…">
-        <button id="sendChatButton" class="icon-button rounded-r-md">→</button>
+        <input id="chatInput" type="text" class="flex-grow rounded-l-md p-2" placeholder="Введите сообщение…">
+        <button id="sendChatButton" class="icon-button rounded-r-md px-4">→</button>
       </div>
     </div>
   </div>
   <script src="app.js"></script>
 </body>
 </html>
+
